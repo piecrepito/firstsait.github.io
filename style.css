@@ -1,3 +1,4 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
 * {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
@@ -9,50 +10,23 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-/* Обновите секции */
-.content-section {
-    width: 100%;
-    padding: 20px;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .content-section {
-        width: 90%;
-        max-width: 1200px;
-        padding: 30px;
-    }
-}
-
-/* Базовые стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #f4f4f4;
     color: #333;
-    font-size: 16px; /* Перенесено из мобильных стилей */
-    line-height: 1.5; /* Перенесено из мобильных стилей */
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-/* Мобильные стили для навигации */
-nav {
-    padding: 10px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+/* ===== СТРУКТУРА СТРАНИЦЫ ===== */
+.content-section {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
 }
 
-nav a {
-    color: white;
-    margin: 5px 10px; /* Уменьшил отступы для мобильных */
-    padding: 8px 12px;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: 0.9em; /* Меньший размер для мобильных */
-}
-
-/* Контентная область */
 main {
     padding: 15px;
     box-sizing: border-box;
@@ -65,7 +39,31 @@ section {
     box-sizing: border-box;
 }
 
-/* Изображения */
+/* ===== НАВИГАЦИЯ ===== */
+nav {
+    background: #333;
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    color: white !important;
+    margin: 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background: #444;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffcc00 !important;
+    background: #555;
+}
+
+/* ===== ЭЛЕМЕНТЫ ===== */
 .image {
     width: 100%;
     max-width: 600px;
@@ -76,7 +74,7 @@ section {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Анимации */
+/* ===== АНИМАЦИИ ===== */
 .animated-block {
     animation: slideIn 1s ease-out;
 }
@@ -86,7 +84,17 @@ section {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Медиа-запросы для разных экранов */
+/* ===== МЕДИА-ЗАПРОСЫ ===== */
+/* Для мобильных (до 480px) */
+@media (max-width: 480px) {
+    nav a {
+        padding: 8px 12px;
+        font-size: 14px;
+        margin: 3px;
+    }
+}
+
+/* Для планшетов (480px-768px) */
 @media (min-width: 480px) {
     nav a {
         margin: 0 15px;
@@ -94,9 +102,16 @@ section {
     }
 }
 
+/* Для ноутбуков (768px-1024px) */
 @media (min-width: 768px) {
     body {
         font-size: 18px;
+    }
+    
+    .content-section {
+        width: 90%;
+        max-width: 1200px;
+        padding: 30px;
     }
     
     main {
@@ -113,6 +128,7 @@ section {
     }
 }
 
+/* Для десктопов (1024px+) */
 @media (min-width: 1024px) {
     nav a {
         margin: 0 20px;
