@@ -1,50 +1,56 @@
+/* Базовые стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background: #f4f4f4;
     color: #333;
+    font-size: 16px; /* Перенесено из мобильных стилей */
+    line-height: 1.5; /* Перенесено из мобильных стилей */
 }
 
-header {
-    background: #333;
-    color: white;
+/* Мобильные стили для навигации */
+nav {
     padding: 10px 0;
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav a {
     color: white;
-    margin: 0 15px;
+    margin: 5px 10px; /* Уменьшил отступы для мобильных */
+    padding: 8px 12px;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 0.9em; /* Меньший размер для мобильных */
 }
 
-nav a:hover {
-    color: #ffcc00;
-}
-
+/* Контентная область */
 main {
-    padding: 20px;
+    padding: 15px;
+    box-sizing: border-box;
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background: #333;
-    color: white;
+section {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
+/* Изображения */
 .image {
     width: 100%;
     max-width: 600px;
+    height: auto;
     display: block;
-    margin: 20px auto;
+    margin: 15px auto;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    animation: fadeIn 2s ease-in-out;
 }
 
+/* Анимации */
 .animated-block {
     animation: slideIn 1s ease-out;
 }
@@ -54,35 +60,35 @@ footer {
     to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Базовые мобильные стили */
-body {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-section {
-  padding: 15px;
-  margin: 0 auto;
-  max-width: 100%;
+/* Медиа-запросы для разных экранов */
+@media (min-width: 480px) {
+    nav a {
+        margin: 0 15px;
+        font-size: 1em;
+    }
 }
 
 @media (min-width: 768px) {
-  /* Стили для планшетов и десктопов */
-  body {
-    font-size: 18px;
-  }
-  
-  section {
-    max-width: 800px;
-  }
+    body {
+        font-size: 18px;
+    }
+    
+    main {
+        padding: 20px;
+    }
+    
+    section {
+        max-width: 800px;
+        padding: 20px;
+    }
+    
+    .image {
+        margin: 20px auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    nav a {
+        margin: 0 20px;
+    }
 }
