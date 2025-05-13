@@ -58,3 +58,31 @@ footer {
     from { opacity: 0; }
     to { opacity: 1; }
 }
+
+/* Базовые мобильные стили */
+body {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 15px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  /* Стили для планшетов и десктопов */
+  body {
+    font-size: 18px;
+  }
+  
+  section {
+    max-width: 800px;
+  }
+}
